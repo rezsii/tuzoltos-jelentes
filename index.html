@@ -109,14 +109,16 @@
   </div>
 </div>
 
-<audio id="sound" src="audio/szirena.mp3"></audio>
+<!-- A zene itt van, de csak a jelentés oldalra indul -->
+<audio id="music" src="audio/szirena.mp3"></audio>
 
 <script>
 function enterReport() {
-  const sound = document.getElementById("sound");
-  sound.play();
+  const music = document.getElementById("music");
+  music.play();  // elindítjuk a zenét
+
+  // Jelentés oldal betöltése
   setTimeout(() => {
-    // Jelentés megjelenítése inline
     document.body.innerHTML = `
 <div class="case-file">
   <div class="case-header">
@@ -128,10 +130,11 @@ function enterReport() {
     </div>
   </div>
 
-  <p><span class="tag">JELENTÉS</span><strong>Üdvözletem!</strong></p>
-
   <p>
-    A mai műszak eléggé lazább volt, mivel éjszaka volt töltés így azzal nem kellett foglalkozni, csak szinten tartani. Elvitték a pénzt, megfelelően aláírtam mindent, illetve volt PC számla <strong>Lakatos Gyulának</strong>, lejáratokra figyelve semmi sem volt lejárva. Viszont a frizé mix 4 reksz mai lejáratos, azaz 2026.01.15 23:59-ig használható, nem fog elfogyni sajnos mind. Kasszák megfelelően, csináltam mindent, nullás volt a Főpénztár is. Délutános műszakkal konzultáltam, megbeszélünk mindent majd átvették a műszakot.
+    A mai szolgálat alacsony kockázati besorolásba került.
+    Az éjszakai feltöltés korábban végrehajtásra került, így aktív
+    beavatkozásra nem volt szükség. A feladat kizárólag megfigyelésre,
+    szinten tartásra és megelőző ellenőrzésre korlátozódott.
   </p>
 
   <h2>💰 Pénzkezelési Jegyzőkönyv</h2>
@@ -166,6 +169,10 @@ function enterReport() {
     a szolgálat szabályosan átadásra került.
   </p>
 
+  <p><strong>
+    Az ügy rendkívüli esemény nélkül lezárva.
+  </strong></p>
+
   <p><strong>Argyelán Rezső<br>Őrparancsnok</strong></p>
 
   <div class="footer">
@@ -173,7 +180,7 @@ function enterReport() {
   </div>
 </div>
     `;
-  }, 1200);
+  }, 500);
 }
 </script>
 
